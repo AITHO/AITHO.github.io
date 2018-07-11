@@ -17,6 +17,24 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+	<p>
+{% assign authorCount = page.authors | size %}
+{% if authorCount != 0 %}
+	Scritto da 
+	{% assign authors = site.data.authors %}
+    {% for author in page.authors %}
+		{% assign name = authors[author].name %}
+		{% assign web = authors[author].web %}
+        {% if forloop.first %}
+            {% if web %}<a href ="{{web}}" >{% endif %}{{ name }}{% if web %}</a>{% endif %}
+        {% elsif forloop.last %}
+            e {% if web %}<a href ="{{web}}" >{% endif %}{{ name }}{% if web %}</a>{% endif %}
+        {% else %}
+            , {% if web %}<a href ="{{web}}" >{% endif %}{{ name }}{% if web %}</a>{% endif %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</p>
 	{% include share-bar.html %}
   </div>
 

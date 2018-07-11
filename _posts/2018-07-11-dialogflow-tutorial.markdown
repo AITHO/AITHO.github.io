@@ -3,6 +3,8 @@ layout: post
 title:  "Tutorial DialogFlow!"
 date:   2018-07-11 11:37:26 +0200
 categories: dialogflow ia
+authors:
+- orazio
 ---
 # Dialogflow  
 Dialogflow è un servizio offerto nella suite Google Cloud Platform (GCP) tramite il quale è possibile sviluppare applicazioni interattive facilmente integrabili in siti web, piattaforme di messagistica, applicazioni mobile e web app, fornendo all'utente nuovi modi per interagire con il prodotto.  
