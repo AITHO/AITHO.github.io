@@ -1,0 +1,63 @@
+{
+  "id": "8405ee8c-118a-4ad9-8441-0b004d1fab77",
+  "parentId": "08a1001b-52d7-410d-80e9-22ad0e30ce55",
+  "rootParentId": "08a1001b-52d7-410d-80e9-22ad0e30ce55",
+  "name": "get-luogo-meteo-splitted",
+  "auto": true,
+  "contexts": [
+    "get-richiesta-meteo-splitted-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "get-richiesta-meteo-splitted",
+      "affectedContexts": [
+        {
+          "name": "get-luogo-meteo-splitted-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "a3f1a1d1-ae7d-4593-8dd2-254c608e78c4",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "name": "city",
+          "value": "$city",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Quando?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529418814,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "cd2d0c26-4de7-4316-acd1-ddb88c2b9f59",
+      "data": [
+        {
+          "text": "@sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418307,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

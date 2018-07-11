@@ -1,0 +1,64 @@
+{
+  "id": "75e20620-190d-4917-a740-57c059cc51e8",
+  "parentId": "8405ee8c-118a-4ad9-8441-0b004d1fab77",
+  "rootParentId": "08a1001b-52d7-410d-80e9-22ad0e30ce55",
+  "name": "get-data-meteo-splitted",
+  "auto": true,
+  "contexts": [
+    "get-luogo-meteo-splitted-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "get-luogo-meteo-splitted-next",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "bb07ee6e-d52e-46e4-b102-073876380396",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "id": "19047ab8-fa37-4c0c-a95d-8bbd5cc56c8a",
+          "required": false,
+          "name": "city",
+          "value": "#get-luogo-meteo-splitted-followup.city",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ok, attendi qualche istante, verifico le informazioni..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529418908,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "b71424bc-6c8e-40a5-ad78-8cb29c1a6ffa",
+      "data": [
+        {
+          "text": "@sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418414,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

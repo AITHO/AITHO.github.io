@@ -1,0 +1,113 @@
+{
+  "id": "08a1001b-52d7-410d-80e9-22ad0e30ce55",
+  "name": "get-richiesta-meteo-splitted",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "get-richiesta-meteo-splitted-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "in che località?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529418166,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "2a226e9a-dc16-437b-bb46-5c14e3d8d78e",
+      "data": [
+        {
+          "text": "Che tempo c'è"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    },
+    {
+      "id": "204206be-d5ce-4782-846b-52f9fb4b3d9c",
+      "data": [
+        {
+          "text": "Clima"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    },
+    {
+      "id": "f119157d-f0f4-4164-8e88-18354c5f1837",
+      "data": [
+        {
+          "text": "Meteo"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    },
+    {
+      "id": "2ae0f4de-9d3d-4e9c-86f1-0610eeee7466",
+      "data": [
+        {
+          "text": "Condizioni metereologiche"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    },
+    {
+      "id": "184a8c2a-dedf-45da-9d3c-1d33641e3306",
+      "data": [
+        {
+          "text": "Condizioni climatiche"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    },
+    {
+      "id": "9807b6c0-9046-4983-8175-799169ef9ad8",
+      "data": [
+        {
+          "text": "Che tempo farà"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1529418166,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

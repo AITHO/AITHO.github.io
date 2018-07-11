@@ -1,0 +1,172 @@
+{
+  "id": "dc37c701-4dd3-4470-a9d3-a14668562b7e",
+  "name": "get-richiesta-meteo-compact-event-driven",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "f8757b09-b24b-491e-8270-71e00e5ce31b",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "id": "3a266eae-26ce-42d4-9e40-d4024c62e348",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "name": "city",
+          "value": "$city",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ok, attendi qualche istante, verifico le informazioni..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529424712,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "11185373-1b12-4b81-8916-a35a5785bd7b",
+      "data": [
+        {
+          "text": "Che tempo c'è a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "7f0ded13-4b99-4127-adf2-e1815c71b1f4",
+      "data": [
+        {
+          "text": "Che tempo c'è @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "16f47170-3587-4ac0-82be-d4619d3ecb30",
+      "data": [
+        {
+          "text": "Clima a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "7ab5b260-7fa2-4a38-8cde-2829dcb31498",
+      "data": [
+        {
+          "text": "Clima @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "f29def87-8fa4-4f98-bad2-e894e0f98eda",
+      "data": [
+        {
+          "text": "Meteo a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "47f84a7a-b4ba-4161-9aac-ce4be686635f",
+      "data": [
+        {
+          "text": "Meteo @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "b95c04c8-f2f8-4769-bdc6-2e52ff88fd33",
+      "data": [
+        {
+          "text": "Condizioni metereologiche a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "8da85cae-31db-4209-aeea-38dd18c3a98c",
+      "data": [
+        {
+          "text": "Condizioni metereologiche @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "b7d633cc-0cb0-431e-a551-6c68bf6c1660",
+      "data": [
+        {
+          "text": "Condizioni climatiche a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    },
+    {
+      "id": "ee1b2c7c-c1e3-497f-9f79-c3120932f65a",
+      "data": [
+        {
+          "text": "Condizioni climatiche @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424712,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

@@ -1,0 +1,199 @@
+{
+  "id": "a322d465-336e-4b47-82f9-08c6e64e93a9",
+  "name": "get-richiesta-meteo-compact",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "4527eeb8-640b-42e5-ba50-77a2a31815d2",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        },
+        {
+          "id": "29f203b5-0da9-4498-8454-45c69f558303",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "city",
+          "value": "$city",
+          "prompts": [
+            "Di quale luogo?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ok, attendi qualche istante, verifico le informazioni..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529424226,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "c4fea698-9f44-4899-a876-e5391d8e2c94",
+      "data": [
+        {
+          "text": "Che tempo c'è a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 1,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "4e242bbe-0544-40bf-888d-f16b95cde542",
+      "data": [
+        {
+          "text": "Che tempo c'è @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "ffe256b5-d9d6-439a-b28f-5d5444c76992",
+      "data": [
+        {
+          "text": "Clima a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "294b4f8b-7afc-4487-a0cd-cd64ca1bac3f",
+      "data": [
+        {
+          "text": "Clima @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "f00267c9-3a33-45c1-bbdd-7ebaa21782e0",
+      "data": [
+        {
+          "text": "Meteo a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "7e8af78d-8ab0-41de-965a-d8675781d22f",
+      "data": [
+        {
+          "text": "Meteo @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "ee91a60b-2d32-4860-adbd-117794344391",
+      "data": [
+        {
+          "text": "Condizioni metereologiche a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "c2299f75-4871-4d87-9a83-b4acefc18e12",
+      "data": [
+        {
+          "text": "Condizioni metereologiche @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "5a42b253-e93e-410a-bf4d-93d42b421382",
+      "data": [
+        {
+          "text": "Condizioni climatiche a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "0f633434-605f-416f-8ae5-96b328cabbd8",
+      "data": [
+        {
+          "text": "Condizioni climatiche @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "c66608b5-22cb-483c-beef-34685e5ee06b",
+      "data": [
+        {
+          "text": "Che tempo farà a @sys.geo-city:city @sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    },
+    {
+      "id": "a441f4a6-f016-4622-859c-558e03845d48",
+      "data": [
+        {
+          "text": "Che tempo farà @sys.date:date a @sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529418553,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

@@ -1,0 +1,57 @@
+{
+  "id": "b6d697f0-5262-4b14-acde-044e86550c8a",
+  "parentId": "003f0893-d5d5-46a8-a0b5-d2aa0799727f",
+  "rootParentId": "003f0893-d5d5-46a8-a0b5-d2aa0799727f",
+  "name": "get-luogo-meteo",
+  "auto": true,
+  "contexts": [
+    "ask-luogo-meteo-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ask-luogo-meteo.ask-luogo-meteo-custom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "3f3c1580-dcf8-4816-8c63-4c3e1e28aa12",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "name": "city",
+          "value": "$city",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ok, attendi qualche istante, verifico le informazioni..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529416130,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "a409c70b-f605-44b6-97d4-db66b8e36090",
+      "data": [
+        {
+          "text": "@sys.geo-city:city"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529416076,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}

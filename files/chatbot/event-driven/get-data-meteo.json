@@ -1,0 +1,57 @@
+{
+  "id": "cd8eeaad-33cc-4046-a557-d7fd39f4c6f7",
+  "parentId": "72d06420-a886-4be6-9342-24029f106022",
+  "rootParentId": "72d06420-a886-4be6-9342-24029f106022",
+  "name": "get-data-meteo",
+  "auto": true,
+  "contexts": [
+    "ask-data-meteo-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "get-data-meteo",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "915dab89-f729-4964-bd85-1ba235098378",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ok, attendi qualche istante, verifico le informazioni..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1529424201,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "cdc5ff3e-679b-4e46-8a60-dd77ebb13e1c",
+      "data": [
+        {
+          "text": "@sys.date:date"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 1529424201,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "templates": []
+}
