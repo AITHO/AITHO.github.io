@@ -23,7 +23,16 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://aitho.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  AITHO
-
+sharebar:
+  enable: true
+  facebook: true
+  twitter: true
+  google: true
+  pinterest: false
+  tumblr: true
+  reddit: false
+  linkedin: true
+  email: true
 # Build settings
 markdown: kramdown
 theme: minima
