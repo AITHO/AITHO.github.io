@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2018-07-11 11:27:26 +0200
 categories: jekyll update
+author: poppo
 authors:
 - gabriele
 ---
