@@ -4,3 +4,6 @@
 
 layout: home
 ---
+{% for category in site.categories %}
+    <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
+{% endfor %}

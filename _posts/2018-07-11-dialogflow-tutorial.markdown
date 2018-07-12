@@ -2,13 +2,15 @@
 layout: post
 title:  "Tutorial DialogFlow!"
 date:   2018-07-11 11:37:26 +0200
-categories: dialogflow ia
+category: tutorial
+tags: [dialogflow, ia, java]
 authors:
 - orazio
+show_excerpt: true
 ---
-# Dialogflow  
 Dialogflow è un servizio offerto nella suite Google Cloud Platform (GCP) tramite il quale è possibile sviluppare applicazioni interattive facilmente integrabili in siti web, piattaforme di messagistica, applicazioni mobile e web app, fornendo all'utente nuovi modi per interagire con il prodotto.  
 Il tutorial illustrerà i processi e gli applicativi necessari per implementare un chatbot capace di rispondere ai messaggi utente in modo intelligente.  
+<!--more-->
 ### WebApp  
 - Configurazione di un Agent.  
 - Configurazione chatbot Meteo.  
