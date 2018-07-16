@@ -1,5 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+@import "minima.scss";
 @import "_share-bar.scss";
+
+@import "_aithotheme.scss";

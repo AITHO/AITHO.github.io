@@ -6,9 +6,10 @@ category: tutorial
 tags: [dialogflow, ia, java]
 authors:
 - orazio
+- gabriele
 show_excerpt: true
 ---
-Dialogflow è un servizio offerto nella suite Google Cloud Platform (GCP) tramite il quale è possibile sviluppare applicazioni interattive facilmente integrabili in siti web, piattaforme di messagistica, applicazioni mobile e web app, fornendo all'utente nuovi modi per interagire con il prodotto.  
+Dialogflow è un servizio offerto nella suite Google Cloud Platform (GCP) tramite il quale è possibile sviluppare applicazioni interattive facilmente integrabili in siti web, piattaforme di messagistica, applicazioni mobile e web app, fornendo all'utente la possibilità di interagire in linguaggio naturale.  
 Il tutorial illustrerà i processi e gli applicativi necessari per implementare un chatbot capace di rispondere ai messaggi utente in modo intelligente.  
 <!--more-->
 ### WebApp  
@@ -21,7 +22,7 @@ Il tutorial illustrerà i processi e gli applicativi necessari per implementare 
 - Configurazione progetto.  
 - Configurazione Agent Webhook.  
   
-# Configurazione di un Agent  
+## Configurazione di un Agent  
 Il chatbot che andremo a sviluppare dovrà essere capace di interpretare i messaggi utente al fine di fornire una risposta corretta e mirata alla specifica richiesta. Di seguito vedremo come implementare un **Agent**, la componente Dialogflow che permette di associare ad un set di frasi in linguaggio naturale una o più azioni.  
 Facciamo un po' di chiarezza considerando il seguente messaggio: "Vorrei conoscere il meteo di domani a Catania". L'Agent del nostro chatbot deve essere capace di estrarre le informazioni relative all'azione, al periodo ed al luogo. Tuttavia quando un Agent viene creato, non è in grado sin da subito di elaborare il messaggio di esempio proposto. E' necessario avviare una specifica procedura detta **Training** tramite la quale lo si istruisce sulla base di alcune frasi tipo.     
 Vediamo quindi come generare ed istruire l'Agent:  
@@ -50,7 +51,7 @@ La modalità template consente di inserire le **Entities** (dati di particolare 
 Riprendiamo l'esempio proposto precedentemente: `Vorrei conoscere il meteo di domani a Catania`. Dopo aver salvato la configurazione ed aver concluso la fase di training, l'Agent riesce a riconoscere la richiesta dell'utente attivando l'Intent appena creato, permettendo allo stesso tempo l'estrazione del luogo e della data (le Entities) qualora siano presenti.  
 Quando si configurano Agent con molteplici **Intents** potrebbe accadere che una frase in linguaggio naturale venga interpretata in modo errato. In queste situazioni, per miglioare il riconoscimento degli Intents, è necessario arricchire i modelli inserendo nuovi esempi.  
   
-# Configurazione chatbot Meteo    
+## Configurazione chatbot Meteo    
 Abbiamo visto come creare ed istruire l'**Agent** del nostro chatbot, tuttavia prima di andare avanti con il tutorial è bene introdurre tre nuovi concetti:  
 1. **Contexts**: gli Intent hanno la possibilità di generare dei metadati in uscita, detti **Contexts**, tramite i quali è possibile tenere traccia dell'andamento della conversazione.  
 2. **Responses**:  gli Intent, dopo essere stati attivati dalla frase utente, hanno la possibilità di inviare una risposta automatica di default.  
@@ -70,13 +71,13 @@ Spiegati questi nuovi concetti, possiamo procedere alla configurazione dell'Agen
   - **[ask-data-meteo](https://github.com/AITHO/AITHO.github.io/blob/master/files/chatbot/event-driven/ask-data-meteo.json)**: attivato tramite API dal backend quando, dopo aver ricevuto i parametri dall'Intent `get-richiesta-meteo-compact-event-driven`, non riesce a recuperare la data. Ha il compito di chiedere la data.  
   - **[get-data-meteo](https://github.com/AITHO/AITHO.github.io/blob/master/files/chatbot/event-driven/get-data-meteo.json)**: attivato quando l'utente digita una data. Al fine di restringere i casi di attivazione e' stato definito come **Intent follow-up**. In questo modo viene inserito come "nodo figlio" di 'ask-data-meteo'. Al "nodo padre" ed al "nodo figlio" viene impostato rispettivamente come `Output Context` ed `Input Context` il contesto `ask-data-meteo-followup`.  
   
-# Conversation flow schema  
+## Conversation flow schema  
 Gli Agent Dialogflow permettono di controllare il flusso dei messaggi scambiati tra il bot (l'Agent) e l'utente.  
 Chat particolarmente complesse ed articolate sono difficili da gestire. Il chatbot deve poter fornire rispote mirate ad ogni possibile nodo della conversazione. A tal fine è una buona pratica progettare ancor prima di iniziare gli sviluppi delle configurazioni dell'Agent un **conversation flow schema** (una mappa completa della conversazione). Esistono diversi tool che permettono di realizzare questi schemi, noi suggeriamo [MindMap](http://app.mindmapmaker.org), un software gratuito mediante il quale è possibile creare mappe di grafi connessi.  
 Configurazione Chatbot Meteo Mindmap: [Download JSON](https://github.com/AITHO/AITHO.github.io/blob/master/files/chatbot/schema/Agent.json)  
 ![link esempio](/files/chatbot/schema/Agent.png)
   
-# Webhook  
+## Webhook  
 Il backend del chatbot Meteo deve essere in grado di fornire all'utente le informazioni metereologiche richieste. Quest'operazione non può essere eseguita in modo diretto dall'Agent, è necessario abilitare una nuova funzionalità tramite la quale è possibile delegare ad un'altra applicazione l'output di uno specifico Intent. Nel nostro caso la gestione della risposta finale viene affidata al backend del chatbot. Per abilitare il Webhook per il chatbot Meteo bisogna effettuare le operazioni riportate di seguito:  
 - Accedi al pannello Dialogflow  
 - Seleziona l'Agent 'Meteo'  
@@ -84,7 +85,7 @@ Il backend del chatbot Meteo deve essere in grado di fornire all'utente le infor
 - Abilita il Webhook (click sul bottone)  
   
 Dopo aver abilitato questa funzionalità tutti gli Intent a cui è stato abilito il bottone Webhook nella sezione fullfilment text, inviano una richiesta HTTP al backend se attivati da una frase utente.  
-# Configurazione progetto  
+## Configurazione progetto  
 Premesse:  
 - L'implementazione proposta di seguito utilizza Apache Tomcat per la configurazione del server.  
 - L'IDE utilizzato è Eclipse Oxygen.  
@@ -123,7 +124,7 @@ Target runtime: Apache Tomcat v9.0
   - Tasto destro sulla nuova configurazione server Tomcat > start
   
 A questo punto la configurazione base dell'endpoint `localhost:8080/WebchatMeteo` è terminata. Tutte le richieste `HTTP GET` ed `HTTP POST` inoltrate a quell'indirizzo vengono gestite dalla classe Webhook per mezzo dei metodi `doGet(...){...}` e `doPost(...){...}`.  
-# Configurazione Agent Webhook  
+## Configurazione Agent Webhook  
 Come primo passo bisogna esternalizzare l'indirizzo del Webhook (il server Tomcat è in esecuzione sulla porta 8080 del localhost).  
 Per semplicità suggeriamo di scaricare il tool gratuito [ngrok](https://ngrok.com/).  
 Per configurare il Webhook passando per ngrok: 
