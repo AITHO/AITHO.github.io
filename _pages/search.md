@@ -22,5 +22,5 @@ Powered by <a href="http://elasticlunr.com/">elasticlunr.js</a>.
 <script src="/js/elasticlunr.min.js"></script>
 <script src="/js/lunr.stemmer.support.min.js"></script>
 <script src="/js/lunr.it.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/search.js"></script>

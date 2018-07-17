@@ -37,14 +37,15 @@ Here we generate all the categories.
 <div class="posts">
 <p>
 {% for ct in cats %}
-<a href="#{{ ct | slugify }}" class="codinfox-category-mark" style="color:#999;text-decoration: none;"> {{ ct }} </a> &nbsp;&nbsp;
+<a href="#{{ ct | slugify }}" class="codinfox-category-mark" style="color:#999;text-decoration: none;" onclick="showBox('{{ ct | slugify }}')"> {{ ct }} </a> &nbsp;&nbsp;
 {% endfor %}
-<a href="#no-category" class="codinfox-category-mark" style="color:#999;text-decoration: none;"> No Category </a> &nbsp;&nbsp;
+<a href="#no-category" class="codinfox-category-mark" style="color:#999;text-decoration: none;" onclick="showBox('no-category')"> No Category </a> &nbsp;&nbsp;
 </p>
 
 {% for ct in cats %}
+<div class="hidebox {{ ct | slugify }}" style="display: none;">
 <h2 id="{{ ct | slugify }}">{{ ct }}</h2>
-<ul class="codinfox-category-list">
+<ul class="codinfox-category-list {{ ct | slugify }}">
   {% for post in site.posts %}
   {% if post.category contains ct %}
   <li>
@@ -61,10 +62,12 @@ Here we generate all the categories.
   {% endif %}
   {% endfor %}
 </ul>
+</div>
 {% endfor %}
 
-<h2 id="no-category">No Category</h2>
-<ul class="codinfox-category-list">
+<div class="hidebox no-category">
+<h2>No Category</h2>
+<ul class="codinfox-category-list no-category">
   {% for post in site.posts %}
   {% unless post.category %}
   <li>
@@ -81,5 +84,7 @@ Here we generate all the categories.
   {% endunless %}
   {% endfor %}
 </ul>
-
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/showBox.js"></script>
 </div>
